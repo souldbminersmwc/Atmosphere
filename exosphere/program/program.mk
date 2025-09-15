@@ -119,7 +119,7 @@ DEPENDS	:=	$(OFILES:.o=.d)
 #---------------------------------------------------------------------------------
 
 $(OUTPUT).lz4	:	$(OUTPUT).bin
-	$(SILENTCMD)$(PYTHON) $(CURRENT_DIRECTORY)/split_program.py $(OUTPUT).bin $(CURRENT_DIRECTORY)/$(ATMOSPHERE_OUT_DIR)
+	@python $(CURRENT_DIRECTORY)/split_program.py $(OUTPUT).bin $(CURRENT_DIRECTORY)/$(ATMOSPHERE_OUT_DIR)
 	@echo built ... $(notdir $@)
 
 $(OUTPUT).bin	:	$(OUTPUT).elf
